@@ -17,7 +17,7 @@ import (
     "io/fs"
     "log"
 
-    "gopkg.in/src-d/go-errors.v1"
+    errs2 "gopkg.in/src-d/go-errors.v1"
 
 
     "github.com/pbnjay/memory"
@@ -31,7 +31,7 @@ import (
     "github.com/gocolly/colly/v2"
 )
 
-var StackPrintError = errors.NewKind("Error! vVv Stack trace vVv")
+var StackPrintError = errs2.NewKind("Error! vVv Stack trace vVv")
 
 //possibly could further abstract these
 func LogFCheck(e error){
