@@ -3,7 +3,7 @@ package main
 import (
     "context"
     "sync"
-    "errors"
+    //"errors"
     "reflect"
     "bufio"
     "time"
