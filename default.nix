@@ -16,8 +16,8 @@ lib.buildGoModule rec {
     url = "https://github.com/mplsbugbounty/signASL-matrix/archive/refs/heads/master.zip";
     owner = "mplsbugbounty";
     repo = pname;
-    rev = "449b7259ea5b7d19f26e11aa1ab4b795b093fdcf";
-    sha256 = "0nv9why8azpz1r4zg6h1314q14habnn1bahd0a8i8lqyv87zl3fd";
+    rev = "2f70fbdb93b3b5306bf82c589089ee034e4db5a3";
+    sha256 = "1584na0qvnlmlr82brjs0xdb0znj9r2prbfark7scnivmfn3ncwk";
   };
 
   vendorHash = "sha256-5KL2O8GM34/dRLy5WbJFk5Ipj8l/1bR97N4iWphdv+E=";
