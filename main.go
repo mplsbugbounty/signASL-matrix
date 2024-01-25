@@ -462,6 +462,13 @@ func main() {
 
     syncer := cli.Syncer.(*mautrix.DefaultSyncer)
 	syncer.OnEventType(event.EventMessage, func(source mautrix.EventSource, evt *event.Event) {
+
+	currentTimestamp := time.Now().Unix()
+	eventTimestamp := evt.Timestamp
+	if currentTimestamp > eventTimestamp +60 {
+		return
+                }
+
         thisMessageBody := fmt.Sprintf( "%v" , evt.Content.AsMessage().Body)
         byteMessageBody := []byte(thisMessageBody)
         anotherMatch, err := regexp.Match( `!asl another.*` , byteMessageBody )
@@ -474,7 +481,7 @@ func main() {
         searchMatch, err := regexp.Match( `!asl search .*` , byteMessageBody )
         PrintCheck(err)
         if searchMatch {
-            searchTerm := strings.Split( thisMessageBody, "!asl search ")[1]
+		    searchTerm := strings.Split( thisMessageBody, "!asl search ")[1]
             searchMsg := fmt.Sprintf("Searching for \"%v\" ...\n", searchTerm )
             sendFormattedText(searchMsg)
             matchesFound := searchFileLines( []byte(searchTerm) )
